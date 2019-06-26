@@ -20,7 +20,7 @@ from logger import get_logger
 
 logger = get_logger()
 
-SERIAL_DEVICE_NAME = '/dev/cu.usbmodem1411'
+SERIAL_DEVICE_NAME = ''
 
 PRESS_ACTION_TYPE = 'press'
 HOTKEY_ACTION_TYPE = 'hotkey'
