@@ -1,3 +1,14 @@
+"""
+Keyboard control via Serial port.
+
+Requirements: Python 3.X
+
+Dependencies:
+- pyserial
+- ipdb
+- pyautogui
+"""
+
 import time
 
 import pyautogui
@@ -53,7 +64,11 @@ YOUTUBE_ACTIONS = {
     },
 }
 
-def control(action):
+def keyboard_control(action):
+    """
+    Keyboard keys:
+    https://pyautogui.readthedocs.io/en/latest/keyboard.html#keyboard-keys
+    """
     action_selected = YOUTUBE_ACTIONS.get(str(action))
     logger.info("action: {}".format(action))
     if action_selected:
@@ -65,16 +80,17 @@ def control(action):
         logger.warning("Action not found.")
 
 def demo_controls():
+    """Short demo from all actions"""
     for k,_ in YOUTUBE_ACTIONS.items():
         time.sleep(2)
-        control(k)
+        keyboard_control(k)
 
 
 def read_serial(port, baudrate=9600):
     """
     Open a serial connection.
 
-    Doc: https://pyreadthedocs.io/en/latest/pyserial_api.html
+    Doc: https://pyserial.readthedocs.io/en/latest/pyserial_api.html
 
     Args:
     - port: (string|required) Device name
@@ -100,7 +116,7 @@ def read_serial(port, baudrate=9600):
             while True:
                 message = arduino_comm.readline().decode("utf-8").rstrip()
                 logger.info("Msg received: {}".format(message))
-                control(action=message)
+                keyboard_control(action=message)
         except Exception as e1:
             logger.error("Error communicating: {}".format(e1))
         except KeyboardInterrupt:
@@ -113,7 +129,8 @@ def read_serial(port, baudrate=9600):
 
 
 def serial_ports():
-    """ Lists serial port names
+    """ Lists serial port names.
+    In addition, show all ports available in console.
 
     returns:
         A list of the serial ports available on the system
@@ -121,6 +138,7 @@ def serial_ports():
     ports = list(list_ports.comports())
     for port in ports:
         logger.info(port.__dict__)
+    return ports
 
 
 if __name__ == "__main__":
