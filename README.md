@@ -1,7 +1,19 @@
 # gesture_control
-Programmatically control the mouse &amp; keyboard.
 
-## Steps
+Keyboard & Mouse control via Serial port.
+
+### Requirements
+
+- Python 3.X
+
+### Dependencies
+
+- pyserial
+- ipdb
+- pyautogui
+
+### Steps
+
 1. make env
 2. make activate
 3. make setup

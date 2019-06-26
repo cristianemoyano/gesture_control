@@ -1,5 +1,5 @@
 """
-Keyboard control via Serial port.
+Keyboard & Mouse control via Serial port.
 
 Requirements: Python 3.X
 
