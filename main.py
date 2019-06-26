@@ -74,7 +74,7 @@ def keyboard_control(action):
     if action_selected:
         if action_selected['type'] == PRESS_ACTION_TYPE:
             pyautogui.press(*action_selected['shortcut'])
-        elif action_selected['type'] == HOTKEY_ACTION_TYPE::
+        elif action_selected['type'] == HOTKEY_ACTION_TYPE:
             pyautogui.hotkey(*action_selected['shortcut'])
     else:
         logger.warning("Action not found.")
