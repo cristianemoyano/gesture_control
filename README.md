@@ -12,7 +12,7 @@ Keyboard & Mouse control via Serial port.
 - ipdb
 - pyautogui
 
-### Steps
+### Steps
 
 1. make env
 2. make activate
