@@ -13,7 +13,7 @@ prompt-toolkit==2.0.9
 ptyprocess==0.6.0
 PyAutoGUI==0.9.45
 PyGetWindow==0.0.6
-Pygments==2.4.2
+Pygments==2.7.4
 PyMsgBox==1.0.7
 pyobjc==5.2
 pyobjc-core==5.2
